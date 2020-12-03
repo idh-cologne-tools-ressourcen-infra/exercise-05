@@ -1,0 +1,107 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.RandomForest -P 100 -I 100 -num-slots 1 -K 0 -M 1.0 -V 0.001 -S 1
+Relation:     titanic-weka.filters.unsupervised.attribute.Remove-R1,3,8-9-weka.filters.unsupervised.attribute.Remove-R7
+Instances:    891
+Attributes:   7
+              Pclass
+              Sex
+              Age
+              SibSp
+              Parch
+              Cabin
+              Survived
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+RandomForest
+
+Bagging with 100 iterations and base learner
+
+weka.classifiers.trees.RandomTree -K 0 -M 1.0 -V 0.001 -S 1 -do-not-check-capabilities
+
+Time taken to build model: 1.78 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         730               81.9304 %
+Incorrectly Classified Instances       161               18.0696 %
+Kappa statistic                          0.6038
+Mean absolute error                      0.2757
+Root mean squared error                  0.3675
+Relative absolute error                 58.2753 %
+Root relative squared error             75.5589 %
+Total Number of Instances              891     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0,913    0,330    0,816      0,913    0,862      0,612    0,860     0,855     0
+                 0,670    0,087    0,827      0,670    0,740      0,612    0,860     0,828     1
+Weighted Avg.    0,819    0,237    0,820      0,819    0,815      0,612    0,860     0,845     
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 501  48 |   a = 0
+ 113 229 |   b = 1
+
+
+ === Run information ===
+
+Scheme:       weka.classifiers.rules.JRip -F 3 -N 2.0 -O 2 -S 1
+Relation:     titanic-weka.filters.unsupervised.attribute.Remove-R1,3,8-9
+Instances:    891
+Attributes:   8
+              Pclass
+              Sex
+              Age
+              SibSp
+              Parch
+              Cabin
+              Embarked
+              Survived
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+JRIP rules:
+===========
+
+(Sex = female) and (Pclass <= 2) => Survived=1 (170.0/9.0)
+(Sex = female) and (Embarked = Q) and (Parch <= 0) => Survived=1 (30.0/6.0)
+(Sex = female) and (SibSp <= 0) and (Age <= 27) => Survived=1 (34.0/12.0)
+(Age <= 12) and (SibSp <= 2) => Survived=1 (28.0/3.0)
+ => Survived=0 (629.0/110.0)
+
+Number of Rules : 5
+
+
+Time taken to build model: 0.01 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         729               81.8182 %
+Incorrectly Classified Instances       162               18.1818 %
+Kappa statistic                          0.5922
+Mean absolute error                      0.2753
+Root mean squared error                  0.3791
+Relative absolute error                 58.2017 %
+Root relative squared error             77.9452 %
+Total Number of Instances              891     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0,947    0,389    0,796      0,947    0,865      0,614    0,785     0,792     0
+                 0,611    0,053    0,878      0,611    0,721      0,614    0,785     0,751     1
+Weighted Avg.    0,818    0,260    0,828      0,818    0,810      0,614    0,785     0,776     
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 520  29 |   a = 0
+ 133 209 |   b = 1
