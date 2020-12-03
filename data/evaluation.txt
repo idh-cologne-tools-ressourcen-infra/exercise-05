@@ -1,0 +1,111 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.rules.DecisionTable -X 1 -S "weka.attributeSelection.BestFirst -D 1 -N 5"
+Relation:     titanic-weka.filters.unsupervised.attribute.Remove-R1,3,8
+Instances:    891
+Attributes:   9
+              Pclass
+              Sex
+              Age
+              SibSp
+              Parch
+              Fare
+              Cabin
+              Embarked
+              Survived
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+Decision Table:
+
+Number of training instances: 891
+Number of Rules : 28
+Non matches covered by Majority class.
+	Best first.
+	Start set: no attributes
+	Search direction: forward
+	Stale search after 5 node expansions
+	Total number of subsets evaluated: 45
+	Merit of best subset found:   81.594
+Evaluation (for feature selection): CV (leave one out) 
+Feature set: 1,2,3,5,9
+
+Time taken to build model: 0.09 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         703               78.9001 %
+Incorrectly Classified Instances       188               21.0999 %
+Kappa statistic                          0.536 
+Mean absolute error                      0.2975
+Root mean squared error                  0.3868
+Relative absolute error                 62.8773 %
+Root relative squared error             79.5362 %
+Total Number of Instances              891     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0,893    0,377    0,792      0,893    0,839      0,544    0,833     0,842     0
+                 0,623    0,107    0,783      0,623    0,694      0,544    0,833     0,796     1
+Weighted Avg.    0,789    0,274    0,788      0,789    0,783      0,544    0,833     0,824     
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 490  59 |   a = 0
+ 129 213 |   b = 1
+
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.RandomForest -P 100 -I 100 -num-slots 1 -K 0 -M 1.0 -V 0.001 -S 1
+Relation:     titanic-weka.filters.unsupervised.attribute.Remove-R1,3,8-weka.filters.unsupervised.attribute.Remove-R6
+Instances:    891
+Attributes:   8
+              Pclass
+              Sex
+              Age
+              SibSp
+              Parch
+              Cabin
+              Embarked
+              Survived
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+RandomForest
+
+Bagging with 100 iterations and base learner
+
+weka.classifiers.trees.RandomTree -K 0 -M 1.0 -V 0.001 -S 1 -do-not-check-capabilities
+
+Time taken to build model: 1.53 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         729               81.8182 %
+Incorrectly Classified Instances       162               18.1818 %
+Kappa statistic                          0.6011
+Mean absolute error                      0.2764
+Root mean squared error                  0.3686
+Relative absolute error                 58.4209 %
+Root relative squared error             75.7925 %
+Total Number of Instances              891     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0,913    0,333    0,815      0,913    0,861      0,609    0,855     0,850     0
+                 0,667    0,087    0,826      0,667    0,738      0,609    0,855     0,819     1
+Weighted Avg.    0,818    0,239    0,819      0,818    0,814      0,609    0,855     0,838     
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 501  48 |   a = 0
+ 114 228 |   b = 1
+
