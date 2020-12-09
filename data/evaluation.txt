@@ -1,0 +1,54 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.rules.JRip -F 3 -N 2.0 -O 2 -S 1
+Relation:     titanic-weka.filters.unsupervised.attribute.Remove-R1,3,8,10-11
+Instances:    891
+Attributes:   7
+              Pclass
+              Sex
+              Age
+              SibSp
+              Parch
+              Fare
+              Survived
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+JRIP rules:
+===========
+
+(Sex = female) and (Pclass <= 2) => Survived=1 (170.0/9.0)
+(Sex = female) and (Fare <= 7.8792) => Survived=1 (42.0/12.0)
+(Age <= 9) and (SibSp <= 2) => Survived=1 (31.0/3.0)
+ => Survived=0 (648.0/123.0)
+
+Number of Rules : 4
+
+
+Time taken to build model: 1.9 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         700               80.8141 %
+Incorrectly Classified Instances       170               19.1419 %
+Kappa statistic                          0.5817
+Mean absolute error                      0.2782
+Root mean squared error                  0.3134
+Relative absolute error                 57.9873 %
+Root relative squared error             78.4535 %
+Total Number of Instances              890     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0,914    0,324    0,482      0,913    0,854      0,255    0,790     0,794     0
+                 0,870    0,092    0,843      0,640    0,719      0,923    0,879     0,683     1
+Weighted Avg.    0,808    0,837    0,834      0,808    0,802      0,234    0,873     0,926     
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 502  48 |   a = 0
+ 123 219 |   b = 1
