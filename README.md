@@ -7,7 +7,7 @@ This exercise is about the Titanic passengers from last time, used for machine l
 Please clone this repository onto your local computer. On the command line, you would enter: `git clone https://github.com/idh-cologne-tools-ressourcen-infra/exercise-05`, and create a new branch using your UzK username as a name.
 
 ## Step 2
-Install Weka from [here](https://www.cs.waikato.ac.nz/ml/weka/). The download comes with a  pre-packaged Java virtual machine, which should make the installation straightforward. 
+Install Weka from [here](https://www.cs.waikato.ac.nz/ml/weka/) ([alternative Link](https://waikato.github.io/weka-wiki/)). The download comes with a  pre-packaged Java virtual machine, which should make the installation straightforward. 
 
 ## Step 3
 The file `data/titanic.arff` contains a data set in the ARFF format used by Weka. It's essentially the same file as you produced in the last exercise. Feel free to inspect it.
