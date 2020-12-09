@@ -1,13 +1,16 @@
 === Run information ===
 
-Scheme:       weka.classifiers.rules.ZeroR 
-Relation:     titanic-weka.filters.unsupervised.attribute.Remove-R6-9-weka.filters.unsupervised.attribute.Remove-R3
+Scheme:       weka.classifiers.rules.JRip -F 3 -N 2.0 -O 2 -S 1
+Relation:     titanic-weka.filters.unsupervised.attribute.Remove-R3-weka.filters.unsupervised.attribute.Remove-R1
 Instances:    891
-Attributes:   7
-              PassengerId
+Attributes:   10
               Pclass
               Sex
               Age
+              SibSp
+              Parch
+              Ticket
+              Fare
               Cabin
               Embarked
               Survived
@@ -15,31 +18,42 @@ Test mode:    10-fold cross-validation
 
 === Classifier model (full training set) ===
 
-ZeroR predicts class value: 0
+JRIP rules:
+===========
 
-Time taken to build model: 0 seconds
+(Sex = female) and (Pclass <= 2) => Survived=1 (170.0/9.0)
+(Sex = female) and (Fare <= 7.8792) => Survived=1 (42.0/12.0)
+(Fare >= 11.1333) and (Age <= 6) and (SibSp <= 2) => Survived=1 (24.0/0.0)
+(Fare >= 52.5542) and (Fare <= 57) => Survived=1 (16.0/5.0)
+ => Survived=0 (639.0/116.0)
+
+Number of Rules : 5
+
+
+Time taken to build model: 0.08 seconds
 
 === Stratified cross-validation ===
 === Summary ===
 
-Correctly Classified Instances         549               61.6162 %
-Incorrectly Classified Instances       342               38.3838 %
-Kappa statistic                          0     
-Mean absolute error                      0.4731
-Root mean squared error                  0.4863
-Relative absolute error                100      %
-Root relative squared error            100      %
+Correctly Classified Instances         727               81.5937 %
+Incorrectly Classified Instances       164               18.4063 %
+Kappa statistic                          0.5929
+Mean absolute error                      0.2725
+Root mean squared error                  0.3768
+Relative absolute error                 57.6014 %
+Root relative squared error             77.4836 %
 Total Number of Instances              891     
 
 === Detailed Accuracy By Class ===
 
                  TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
-                 1.000    1.000    0.616      1.000    0.763      ?        0.497     0.615     0
-                 0.000    0.000    ?          0.000    ?          ?        0.497     0.382     1
-Weighted Avg.    0.616    0.616    ?          0.616    ?          ?        0.497     0.525     
+                 0.923    0.357    0.806      0.923    0.861      0.605    0.799     0.809     0
+                 0.643    0.077    0.840      0.643    0.728      0.605    0.799     0.769     1
+Weighted Avg.    0.816    0.249    0.819      0.816    0.810      0.605    0.799     0.794     
 
 === Confusion Matrix ===
 
    a   b   <-- classified as
- 549   0 |   a = 0
- 342   0 |   b = 1
+ 507  42 |   a = 0
+ 122 220 |   b = 1
+
